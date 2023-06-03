@@ -1,0 +1,41 @@
+#:import Thread threading.Thread
+
+MDScreen:    
+
+    MDBoxLayout:
+        orientation : "vertical"
+
+        MDTopAppBar:
+            title : "ELLA : The AI Assistant"
+            left_action_items : [['robot-happy', app.change_theme]]
+
+        MDLabel:
+            text : ""
+
+    Image:
+        id : logo_image
+        source : r"artifacts\LOGO - LIGHT.png"
+        pos_hint : {"center_x" : 0.5, "top" : 0.8}
+        size_hint : 0.3, 0.3
+
+    MDRoundFlatIconButton:
+        id : button
+        icon : "microphone-message"
+        text : "Listen Prompt"
+        pos_hint : {"center_x" : 0.5, "top" : 0.35}
+        on_release :
+            t1 = Thread(target = app.change_label_text, args = ("Listening...", 7))
+            t2 = Thread(target = app.button_press)
+            
+            t1.start()
+            t2.start()      
+
+
+    MDLabel : 
+        id : label
+        halign : "center"
+        font_style : "Subtitle2"
+        text : ""
+        pos_hint : {"y" : -0.32}
+        theme_text_color : "Custom"
+        text_color : 1, 1, 1, 1

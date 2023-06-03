@@ -1,0 +1,13 @@
+pyttsx3==2.90
+SpeechRecognition==3.10.0
+openai==0.27.6
+pyaudio==0.2.13
+kivy==2.1.0
+kivymd==1.1.1
+pypiwin32
+kivy-deps.glew==0.3.1
+kivy-deps.gstreamer==0.3.3
+kivy-deps.sdl2==0.4.5
+pygments==2.15.1
+docutils==0.20.1
+-e .
